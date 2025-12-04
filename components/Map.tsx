@@ -36,16 +36,16 @@ const Map: React.FC<MapProps> = ({ factories, selectedFactoryId, onSelectFactory
     if (!mapContainerRef.current || !window.L) return;
 
     if (!mapInstanceRef.current) {
-      // --- CAPAS DE GOOGLE MAPS ---
+      // --- CAPAS DE GOOGLE MAPS (HTTPS) ---
       // Calles (Standard)
-      const googleStreets = window.L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+      const googleStreets = window.L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
         attribution: '&copy; Google Maps'
       });
 
       // Híbrido (Satélite + Etiquetas)
-      const googleHybrid = window.L.tileLayer('http://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+      const googleHybrid = window.L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
         maxZoom: 20,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
         attribution: '&copy; Google Maps'
@@ -55,7 +55,7 @@ const Map: React.FC<MapProps> = ({ factories, selectedFactoryId, onSelectFactory
       const map = window.L.map(mapContainerRef.current, {
         center: [30.0, 114.0],
         zoom: 5,
-        layers: [googleStreets], // Default layer
+        layers: [googleStreets], // Default layer is Streets
         zoomControl: false 
       });
 
