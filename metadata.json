@@ -1,0 +1,5 @@
+{
+  "name": "Prefab China Tour Planner",
+  "description": "A comprehensive dashboard for planning visits to 10 prefabricated house factories in China, featuring interactive maps, detailed routes, and an AI trip assistant.",
+  "requestFramePermissions": []
+}
